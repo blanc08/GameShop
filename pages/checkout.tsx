@@ -45,17 +45,14 @@ export default function checkout() {
         <div className="game-checkout d-flex flex-row align-items-center pt-md-50 pb-md-50 pt-30 pb-30">
           <div className="pe-4">
             <div className="cropped">
-              <img
-                src="../assets/img/Thumbnail-3.png"
-                className="img-fluid"
-                alt=""
-              />
+              <img src="/img/Thumbnail-3.png" className="img-fluid" alt="" />
             </div>
           </div>
           <div>
             <p className="fw-bold text-xl color-palette-1 mb-10">
               Mobile Legends:
-              <br /> The New Battle 2021
+              <br />
+              The New Battle 2021
             </p>
             <p className="color-palette-2 m-0">Category: Mobile</p>
           </div>
@@ -66,19 +63,24 @@ export default function checkout() {
             Purchase Details
           </h2>
           <p className="text-lg color-palette-1 mb-20">
-            Your Game ID <span className="purchase-details">masayoshizero</span>
+            Your Game ID
+            <span className="purchase-details">masayoshizero</span>
           </p>
           <p className="text-lg color-palette-1 mb-20">
-            Order ID <span className="purchase-details">#GG001</span>
+            Order ID
+            <span className="purchase-details">#GG001</span>
           </p>
           <p className="text-lg color-palette-1 mb-20">
-            Item <span className="purchase-details">250 Diamonds</span>
+            Item
+            <span className="purchase-details">250 Diamonds</span>
           </p>
           <p className="text-lg color-palette-1 mb-20">
-            Price <span className="purchase-details">Rp 42.280.500</span>
+            Price
+            <span className="purchase-details">Rp 42.280.500</span>
           </p>
           <p className="text-lg color-palette-1 mb-20">
-            Tax (10%) <span className="purchase-details">Rp 4.228.000</span>
+            Tax (10%)
+            <span className="purchase-details">Rp 4.228.000</span>
           </p>
           <p className="text-lg color-palette-1 mb-20">
             Total{' '}
@@ -96,10 +98,12 @@ export default function checkout() {
             <span className="purchase-details">Masayoshi Angga Zero</span>
           </p>
           <p className="text-lg color-palette-1 mb-20">
-            Type <span className="payment-details">Worldwide Transfer</span>
+            Type
+            <span className="payment-details">Worldwide Transfer</span>
           </p>
           <p className="text-lg color-palette-1 mb-20">
-            Bank Name <span className="payment-details">Mandiri</span>
+            Bank Name
+            <span className="payment-details">Mandiri</span>
           </p>
           <p className="text-lg color-palette-1 mb-20">
             Bank Account Name{' '}
@@ -113,7 +117,7 @@ export default function checkout() {
         <label className="checkbox-label text-lg color-palette-1">
           I have transferred the money
           <input type="checkbox" />
-          <span className="checkmark"></span>
+          <span className="checkmark" />
         </label>
         <div className="d-md-block d-flex flex-column w-100 pt-50">
           <a
