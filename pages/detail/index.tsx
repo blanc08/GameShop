@@ -17,7 +17,7 @@ export default function Detail() {
             <div className="row align-items-center">
               <div className="col-md-12 col-4">
                 <img
-                  src="../assets/img/Thumbnail-3.png"
+                  src="/img/Thumbnail-3.png"
                   width="280"
                   height="380"
                   className="img-fluid"
@@ -99,9 +99,9 @@ export default function Detail() {
                           <path
                             d="M5.83301 10L8.46459 12.5L14.1663 7.5"
                             stroke="#00BAFF"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                       </div>
@@ -139,9 +139,9 @@ export default function Detail() {
                           <path
                             d="M5.83301 10L8.46459 12.5L14.1663 7.5"
                             stroke="#00BAFF"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                       </div>
@@ -179,9 +179,9 @@ export default function Detail() {
                           <path
                             d="M5.83301 10L8.46459 12.5L14.1663 7.5"
                             stroke="#00BAFF"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                       </div>
@@ -219,9 +219,9 @@ export default function Detail() {
                           <path
                             d="M5.83301 10L8.46459 12.5L14.1663 7.5"
                             stroke="#00BAFF"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                       </div>
@@ -259,9 +259,9 @@ export default function Detail() {
                           <path
                             d="M5.83301 10L8.46459 12.5L14.1663 7.5"
                             stroke="#00BAFF"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                       </div>
@@ -270,7 +270,7 @@ export default function Detail() {
                       </p>
                     </div>
                   </label>
-                  <div className="col-lg-4 col-sm-6"></div>
+                  <div className="col-lg-4 col-sm-6" />
                 </div>
               </div>
               <div className="pb-md-50 pb-20">
@@ -307,9 +307,9 @@ export default function Detail() {
                             <path
                               d="M5.83301 10L8.46459 12.5L14.1663 7.5"
                               stroke="#00BAFF"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             />
                           </svg>
                         </div>
@@ -346,9 +346,9 @@ export default function Detail() {
                             <path
                               d="M5.83301 10L8.46459 12.5L14.1663 7.5"
                               stroke="#00BAFF"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             />
                           </svg>
                         </div>
@@ -357,7 +357,7 @@ export default function Detail() {
                         </p>
                       </div>
                     </label>
-                    <div className="col-lg-4 col-sm-6"></div>
+                    <div className="col-lg-4 col-sm-6" />
                   </div>
                 </fieldset>
               </div>

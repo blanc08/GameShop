@@ -1,0 +1,6 @@
+#line break
+*.js    eol=lf
+*.jsx   eol=lf
+*.json  eol=lf
+*.tsx  eol=lf
+*.ts  eol=lf
