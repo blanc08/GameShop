@@ -21,5 +21,7 @@ module.exports = {
     ],
     'react/react-in-jsx-scope': 'off',
     'linebreak-style': 0,
+    'import/extensions': { tsx: 'never' },
+    'jsx-ally/anchor-is-valid': 'off',
   },
 };
