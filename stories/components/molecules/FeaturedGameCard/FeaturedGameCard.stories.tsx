@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 import FeaturedGameCard, {
   FeaturedGameCardProps,
-} from '../../../components/molecules/FeaturedGameCard';
+} from '../../../../components/molecules/FeaturedGameCard';
 
 export default {
   title: 'Components/Molecules/FeaturedGameCard',
