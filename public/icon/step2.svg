@@ -15,17 +15,17 @@
                   width="80"
                   height="80"
                 >
-                  <circle cx="40" cy="40" r="40" fill="/#D7D7F8" />
+                  <circle cx="40" cy="40" r="40" fill="#D7D7F8" />
                 </mask>
                 <g mask="url(/#mask0-icon2)">
-                  <circle cx="40" cy="40" r="40" fill="/#D7D7F8" />
+                  <circle cx="40" cy="40" r="40" fill="#D7D7F8" />
                   <rect
                     x="-14"
                     y="16"
                     width="62"
                     height="82"
                     rx="16"
-                    fill="/#695DE9"
+                    fill="#695DE9"
                   />
                   <path
                     d="M32 36H5"
@@ -47,7 +47,7 @@
                     width="49"
                     height="75"
                     rx="16"
-                    fill="/#2B2467"
+                    fill="#2B2467"
                   />
                   <path
                     d="M97 50H70"

@@ -15,10 +15,10 @@
     width="80"
     height="80"
     >
-    <circle cx="40" cy="40" r="40" fill="/#D7D7F8" />
+    <circle cx="40" cy="40" r="40" fill="#D7D7F8" />
     </mask>
     <g mask="url(/#mask0-icon1)">
-    <circle cx="40" cy="40" r="40" fill="/#D7D7F8" />
+    <circle cx="40" cy="40" r="40" fill="#D7D7F8" />
     <mask
         id="mask1"
         mask-type="alpha"
@@ -30,13 +30,13 @@
     >
         <path
         d="M-12 23H33C45.1503 23 55 32.8497 55 45V96H-12V23Z"
-        fill="/#4D17E2"
+        fill="#4D17E2"
         />
     </mask>
     <g mask="url(/#mask1)">
         <path
         d="M-12 23H33C45.1503 23 55 32.8497 55 45V96H-12V23Z"
-        fill="/#695DE9"
+        fill="#695DE9"
         />
         <path
         d="M37 55H-4"
@@ -58,7 +58,7 @@
         width="52"
         height="34"
         rx="13"
-        fill="/#5C52C7"
+        fill="#5C52C7"
         />
     </g>
     <rect
@@ -67,7 +67,7 @@
         width="41"
         height="27"
         rx="13"
-        fill="/#2B2467"
+        fill="#2B2467"
     />
     <circle
         cx="47.5"
