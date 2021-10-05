@@ -1,22 +1,18 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 
 export interface FeaturedGameCardProps {
-  title: string;
-  category: string;
-  thumbnail:
-    | '/img/Thumbnail-1.png'
-    | '/img/Thumbnail-2.png'
-    | '/img/Thumbnail-3.png'
-    | '/img/Thumbnail-4.png'
-    | '/img/Thumbnail-5.png';
+  title: string
+  category: string
+  thumbnail: string
+  id: string
 }
 
 export default function FeaturedGameCard(props: FeaturedGameCardProps) {
-  const { title, category, thumbnail } = props;
+  const { title, category, thumbnail, id } = props
   return (
     <div className="featured-game-card position-relative">
-      <Link href="/detail">
+      <Link href={`/detail/${id}`}>
         <a>
           <div className="blur-sharp">
             <Image
@@ -54,5 +50,5 @@ export default function FeaturedGameCard(props: FeaturedGameCardProps) {
         </a>
       </Link>
     </div>
-  );
+  )
 }

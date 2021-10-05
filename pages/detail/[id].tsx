@@ -1,9 +1,20 @@
-import TopUpItem from '../../components/molecules/TopUpItem';
-import Footer from '../../components/organisms/Footer';
-import Navbar from '../../components/organisms/Navbar';
-import TopUpForm from '../../components/organisms/TopUpForm';
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import TopUpItem from '../../components/molecules/TopUpItem'
+import Footer from '../../components/organisms/Footer'
+import Navbar from '../../components/organisms/Navbar'
+import TopUpForm from '../../components/organisms/TopUpForm'
 
 export default function Detail() {
+  const { query, isReady } = useRouter()
+
+  useEffect(() => {
+    if (isReady) {
+      console.log('router sudah tesedia', query.id)
+    } else {
+      console.log('blum tersedia')
+    }
+  }, [isReady])
   return (
     <>
       <Navbar />
@@ -32,5 +43,5 @@ export default function Detail() {
       </section>
       <Footer />
     </>
-  );
+  )
 }
