@@ -24,4 +24,4 @@ module.exports = {
     'import/extensions': { tsx: 'never' },
     'jsx-ally/anchor-is-valid': 'off',
   },
-};
+}

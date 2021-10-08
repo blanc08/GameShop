@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Auth from './Auth';
-import Menu from './Menu';
-import ToogleMenu from './ToogleMenu';
+import Image from 'next/image'
+import Auth from './Auth'
+import Menu from './Menu'
+import ToogleMenu from './ToogleMenu'
 export default function Navbar() {
   return (
     <section>
@@ -27,11 +27,11 @@ export default function Navbar() {
               <Menu title="Reward" href="/" />
               <Menu title="Discover" href="/" />
               <Menu title="Global Rank" href="/" />
-              <Auth isLogin />
+              <Auth />
             </ul>
           </div>
         </div>
       </nav>
     </section>
-  );
+  )
 }
