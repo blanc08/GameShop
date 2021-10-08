@@ -20,7 +20,7 @@ export default function SignUpPhoto() {
   const router = useRouter()
 
   const getGameCategoryAPI = useCallback(async () => {
-    const response = await getGameCategory()
+    const response: { data: any } = await getGameCategory()
 
     setCategories(response.data)
     setFavorite(response.data[0]._id)
@@ -32,12 +32,12 @@ export default function SignUpPhoto() {
 
   useEffect(() => {
     const getLocalForm = localStorage.getItem('user-form')
-    setLocalForm(JSON.parse(getLocalForm))
+    setLocalForm(JSON.parse(getLocalForm!))
   }, [])
 
   const onSubmit = async () => {
     const getLocalForm = await localStorage.getItem('user-form')
-    const form = JSON.parse(getLocalForm)
+    const form = JSON.parse(getLocalForm!)
 
     const data = new FormData()
 
@@ -52,7 +52,7 @@ export default function SignUpPhoto() {
     data.append('favorite', favorite)
 
     const result = await setSignup(data)
-    if (result?.err === 1) {
+    if (result.error) {
       toast.error(result.message)
     } else {
       toast.success('Register berhasil!')
@@ -91,7 +91,7 @@ export default function SignUpPhoto() {
                     name="avatar"
                     accept="image/png, image/jpeg"
                     onChange={(event) => {
-                      const img = event.target.files[0]
+                      const img = event.target.files![0]
                       setImagePreview(URL.createObjectURL(img))
                       setImage(img)
                     }}
@@ -119,7 +119,7 @@ export default function SignUpPhoto() {
                   value={favorite}
                   onChange={(event) => setFavorite(event.target.value)}
                 >
-                  {categories.map((category) => (
+                  {categories.map((category: { name: string; _id: string }) => (
                     <option key={category._id} value={category._id}>
                       {category.name}
                     </option>
