@@ -1,14 +1,19 @@
-import Link from 'next/link';
+import Link from 'next/link'
+import { useEffect } from 'react'
+import Cookies from 'js-cookie'
 
 interface AuthProps {
-  isLogin?: boolean;
+  isLogin?: boolean
 }
 export default function Auth(props: Partial<AuthProps>) {
-  const { isLogin } = props;
+  const { isLogin } = props
+  useEffect(() => {
+    const token = Cookies.get('token')
+  }, [])
   if (isLogin) {
     return (
       <li className="nav-item my-auto dropdown d-flex">
-        <div className="vertical-line d-lg-block d-none"></div>
+        <div className="vertical-line d-lg-block d-none" />
         <div>
           <a
             className="dropdown-toggle ms-lg-40"
@@ -58,9 +63,8 @@ export default function Auth(props: Partial<AuthProps>) {
           </ul>
         </div>
       </li>
-    );
+    )
   }
-
   return (
     <li className="nav-item my-auto">
       <Link href="/sign-in">
@@ -78,5 +82,5 @@ export default function Auth(props: Partial<AuthProps>) {
         </a>
       </Link>
     </li>
-  );
+  )
 }
