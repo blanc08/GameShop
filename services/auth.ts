@@ -1,0 +1,23 @@
+import axios from 'axios'
+
+const ROOT_API = process.env.NEXT_PUBLIC_API
+const API_VERSION = 'api/v1'
+
+export const setSignup = async (data: FormData) => {
+  const URL = 'auth/signup'
+
+  const response = await axios
+    .post(`${ROOT_API}/${API_VERSION}/${URL}`, data)
+    .catch((err) => err.response)
+
+  console.log(response)
+  const axiosResponse = response.data
+
+  if (axiosResponse?.err === 1) {
+    return axiosResponse
+  }
+
+  return axiosResponse.data
+}
+
+export const setLogin = async () => {}

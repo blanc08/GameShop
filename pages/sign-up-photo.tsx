@@ -1,11 +1,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
+import { setSignup } from '../services/auth'
 import { getGameCategory } from '../services/player'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { useRouter } from 'next/router'
 
 export default function SignUpPhoto() {
   const [categories, setCategories] = useState([])
   const [favorite, setFavorite] = useState('')
+  const [image, setImage] = useState('')
+  const [imagePreview, setImagePreview] = useState(null)
+  const [localForm, setLocalForm] = useState({
+    name: '',
+    email: '',
+  })
+
+  const router = useRouter()
 
   const getGameCategoryAPI = useCallback(async () => {
     const response = await getGameCategory()
@@ -18,8 +30,35 @@ export default function SignUpPhoto() {
     getGameCategoryAPI()
   }, [])
 
-  const onSubmit = () => {
-    console.log('favorite : ', favorite)
+  useEffect(() => {
+    const getLocalForm = localStorage.getItem('user-form')
+    setLocalForm(JSON.parse(getLocalForm))
+  }, [])
+
+  const onSubmit = async () => {
+    const getLocalForm = await localStorage.getItem('user-form')
+    const form = JSON.parse(getLocalForm)
+
+    const data = new FormData()
+
+    data.append('image', image)
+    data.append('email', form.email)
+    data.append('name', form.name)
+    data.append('password', form.password)
+    data.append('username', form.name)
+    data.append('phoNumber', '08123456789')
+    data.append('role', 'user')
+    data.append('status', 'Y')
+    data.append('favorite', favorite)
+
+    const result = await setSignup(data)
+    if (result?.err === 1) {
+      toast.error(result.message)
+    } else {
+      toast.success('Register berhasil!')
+      router.push('/sign-up-success')
+      localStorage.removeItem('user-form')
+    }
   }
 
   return (
@@ -31,26 +70,39 @@ export default function SignUpPhoto() {
               <div className="mb-20">
                 <div className="image-upload text-center">
                   <label htmlFor="avatar">
-                    <Image
-                      src="/icon/UploadPhoto.svg"
-                      height={120}
-                      width={120}
-                      alt="upload"
-                    />
+                    {imagePreview ? (
+                      <img
+                        src={imagePreview}
+                        className="img-upload"
+                        alt="upload"
+                      />
+                    ) : (
+                      <Image
+                        src="/icon/UploadPhoto.svg"
+                        height={120}
+                        width={120}
+                        alt="upload"
+                      />
+                    )}
                   </label>
                   <input
                     id="avatar"
                     type="file"
                     name="avatar"
                     accept="image/png, image/jpeg"
+                    onChange={(event) => {
+                      const img = event.target.files[0]
+                      setImagePreview(URL.createObjectURL(img))
+                      setImage(img)
+                    }}
                   />
                 </div>
               </div>
               <h2 className="fw-bold text-xl text-center color-palette-1 m-0">
-                Shayna Anne
+                {localForm.name}
               </h2>
               <p className="text-lg text-center color-palette-1 m-0">
-                shayna@anne.com
+                {localForm.email}
               </p>
               <div className="pt-50 pb-50">
                 <label
@@ -68,7 +120,9 @@ export default function SignUpPhoto() {
                   onChange={(event) => setFavorite(event.target.value)}
                 >
                   {categories.map((category) => (
-                    <option value={category._id}>{category.name}</option>
+                    <option key={category._id} value={category._id}>
+                      {category.name}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -94,6 +148,7 @@ export default function SignUpPhoto() {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </section>
   )
 }
