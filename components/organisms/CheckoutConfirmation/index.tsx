@@ -16,5 +16,5 @@ export default function CheckoutConfirmation() {
         </a>
       </div>
     </>
-  );
+  )
 }

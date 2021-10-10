@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Auth from './Auth'
 import Menu from './Menu'
 import ToogleMenu from './ToogleMenu'
+
 export default function Navbar() {
   return (
     <section>

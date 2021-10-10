@@ -15,5 +15,5 @@ export default function CheckoutItem() {
         <p className="color-palette-2 m-0">Category: Mobile</p>
       </div>
     </div>
-  );
+  )
 }
