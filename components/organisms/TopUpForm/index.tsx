@@ -26,7 +26,7 @@ export default function TopUpForm(props: TopUpFormTypes) {
     setNominalItem(data)
   }
 
-  const onPaymentItemChange = (payment: NominalsTypes, bank: BanksTypes) => {
+  const onPaymentItemChange = (payment: PaymentTypes, bank: BanksTypes) => {
     const data = {
       payment,
       bank,

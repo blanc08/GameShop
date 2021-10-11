@@ -1,4 +1,5 @@
 import callAPI from '../config/api'
+import { UserTypes } from './data-types'
 
 // * Variable
 const ROOT_API = process.env.NEXT_PUBLIC_API
@@ -38,5 +39,16 @@ export const getTransactionDetail = async (id: string, token: string) => {
     url,
     method: 'GET',
     serverToken: token,
+  })
+}
+
+export const updateProfile = async (data: FormData) => {
+  const url = `${ROOT_API}/${API_VERSION}/players/profile`
+
+  return callAPI({
+    url,
+    method: 'PUT',
+    data,
+    token: true,
   })
 }

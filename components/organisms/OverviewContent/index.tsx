@@ -17,10 +17,8 @@ export default function OverviewContent() {
     if (response.error) {
       toast.error(response.message)
     } else {
-      console.log(response.data)
       setCount(response.data.count)
       setData(response.data.data)
-      console.log(count)
     }
   }, [])
 

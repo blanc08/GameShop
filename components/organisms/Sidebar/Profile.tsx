@@ -6,7 +6,7 @@ import { jwtPayloadTypes, UserTypes } from '../../../services/data-types'
 export default function Profile() {
   const [user, setUser] = useState({
     avatar: '',
-    username: '',
+    name: '',
     email: '',
   })
 
@@ -31,7 +31,7 @@ export default function Profile() {
         alt="ok"
         style={{ borderRadius: '100%' }}
       />
-      <h2 className="fw-bold text-xl color-palette-1 m-0">{user.username}</h2>
+      <h2 className="fw-bold text-xl color-palette-1 m-0">{user.name}</h2>
       <p className="color-palette-2 m-0">{user.email}</p>
     </div>
   )

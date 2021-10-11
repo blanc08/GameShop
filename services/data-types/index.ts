@@ -1,3 +1,5 @@
+import { SetStateAction } from 'react'
+
 export interface CategoryTypes {
   _id: string
   name: string
@@ -39,15 +41,16 @@ export interface LoginTypes {
 
 export interface UserTypes {
   id: string
-  username: string
+  name: string
   email: string
   avatar: string
+  phoneNumber: string
 }
 
 export interface DetailVoucherTypes {
   detail: {
     category: CategoryTypes
-    nominals: NominalsTypes[]
+    nominals: SetStateAction<never[]>
     isFeatured: boolean
     name: string
     price: number
@@ -56,7 +59,7 @@ export interface DetailVoucherTypes {
     user: UserTypes
     _id: string
   }
-  payments: PaymentTypes[]
+  payments: SetStateAction<never[]>
 }
 
 export interface jwtPayloadTypes {
