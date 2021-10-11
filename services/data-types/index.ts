@@ -44,7 +44,31 @@ export interface UserTypes {
   avatar: string
 }
 
+export interface DetailVoucherTypes {
+  detail: {
+    category: CategoryTypes
+    nominals: NominalsTypes[]
+    isFeatured: boolean
+    name: string
+    price: number
+    status: string
+    thumbnail: string
+    user: UserTypes
+    _id: string
+  }
+  payments: PaymentTypes[]
+}
+
 export interface jwtPayloadTypes {
   player: UserTypes
   iat: number
+}
+
+export interface CheckoutTypes {
+  voucher: string
+  nominal: string
+  payment: string
+  bank: string
+  name: string
+  accountUser: string
 }

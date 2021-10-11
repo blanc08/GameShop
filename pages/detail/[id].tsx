@@ -4,6 +4,7 @@ import TopUpItem from '../../components/molecules/TopUpItem'
 import Footer from '../../components/organisms/Footer'
 import Navbar from '../../components/organisms/Navbar'
 import TopUpForm from '../../components/organisms/TopUpForm'
+import { DetailVoucherTypes } from '../../services/data-types'
 import { getDetailVoucher } from '../../services/player'
 
 export default function Detail() {
@@ -19,11 +20,12 @@ export default function Detail() {
   const [payments, setPayments] = useState([])
 
   const getVoucherDetailAPI = useCallback(async (id) => {
-    const data = await getDetailVoucher(id)
+    const data: DetailVoucherTypes = await getDetailVoucher(id)
 
-    console.log(data.payments)
+    console.log(data)
 
     setDataItem(data.detail)
+    localStorage.setItem('data-item', JSON.stringify(data.detail))
     setNominals(data.detail.nominals)
     setPayments(data.payments)
   }, [])
