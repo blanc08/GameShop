@@ -52,7 +52,8 @@ export default function Detail({ dataItem, nominals, payments }: DetailProps) {
 }
 
 export async function getStaticPaths() {
-  const data = await getFeaturedGame()
+  const { data } = await getFeaturedGame()
+
   const paths = data.map((item: FeaturedGameCardTypes) => {
     return {
       params: {
