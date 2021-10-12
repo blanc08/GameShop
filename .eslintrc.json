@@ -32,6 +32,11 @@
         "ObjectPattern": { "multiline": true }
       }
     ],
-    "operator-linebreak": ["warning", "after"]
+    "operator-linebreak": [1, "after"],
+    "implicit-arrow-linebreak": "warn",
+    "react/jsx-curly-newline": 0,
+    "react/jsx-props-no-spreading": 0,
+    "no-shadow": 1,
+    "arrow-body-style": "off"
   }
 }

@@ -43,7 +43,7 @@ export interface UserTypes {
   id: string
   name: string
   email: string
-  avatar: string
+  avatar: any
   phoneNumber: string
 }
 

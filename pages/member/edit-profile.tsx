@@ -1,16 +1,16 @@
-import Sidebar from '../../components/organisms/Sidebar'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Input from '../../components/atoms/Inputs'
 import { useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
-import { jwtPayloadTypes, UserTypes } from '../../services/data-types'
 import jwtDecode from 'jwt-decode'
-import { updateProfile } from '../../services/member'
 import { toast } from 'react-toastify'
-import { useRouter } from 'next/router'
+import Sidebar from '../../components/organisms/Sidebar'
+import Input from '../../components/atoms/Inputs'
+import { jwtPayloadTypes, UserTypes } from '../../services/data-types'
+import { updateProfile } from '../../services/member'
 
 export default function EditProfile() {
-  const [user, setUser] = useState({
+  const [user, setUser] = useState<UserTypes>({
     id: '',
     avatar: '',
     name: '',
@@ -60,7 +60,7 @@ export default function EditProfile() {
                 <div className="image-upload">
                   <label htmlFor="avatar">
                     {imagePreview ? (
-                      <img src={imagePreview} width={90} height={90} />
+                      <img src={imagePreview} width={90} height={90} alt="" />
                     ) : (
                       <Image
                         src="/icon/UploadPhoto.svg"
@@ -76,6 +76,7 @@ export default function EditProfile() {
                     accept="image/png, image/jpeg"
                     onChange={(event) => {
                       const img = event.target.files![0]
+
                       setImagePreview(URL.createObjectURL(img))
                       setUser({
                         ...user,

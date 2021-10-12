@@ -3,10 +3,10 @@ import TransactionDetailContent from '../../../components/organisms/TransactionD
 import { HistoryTransactionTypes } from '../../../services/data-types'
 import { getTransactionDetail } from '../../../services/member'
 
-interface TransactionDetailProps {
+interface transactionDetailProps {
   TransactionDetail: HistoryTransactionTypes
 }
-export default function TransactionDetail(props: TransactionDetailProps) {
+export default function TransactionDetail(props: transactionDetailProps) {
   const { TransactionDetail } = props
 
   return (

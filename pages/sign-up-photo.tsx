@@ -9,8 +9,8 @@ import { getGameCategory } from '../services/player'
 export default function SignUpPhoto() {
   const [categories, setCategories] = useState([])
   const [favorite, setFavorite] = useState('')
-  const [image, setImage] = useState('')
-  const [imagePreview, setImagePreview] = useState(null)
+  const [image, setImage] = useState<File>()
+  const [imagePreview, setImagePreview] = useState('')
   const [localForm, setLocalForm] = useState({
     name: '',
     email: '',
@@ -40,7 +40,7 @@ export default function SignUpPhoto() {
 
     const data = new FormData()
 
-    data.append('image', image)
+    data.append('image', image!)
     data.append('email', form.email)
     data.append('name', form.name)
     data.append('password', form.password)
