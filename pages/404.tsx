@@ -349,5 +349,5 @@ export default function Costum404() {
         </div>
       </div>
     </section>
-  );
+  )
 }
