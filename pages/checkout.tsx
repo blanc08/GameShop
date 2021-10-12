@@ -1,7 +1,7 @@
-import CheckoutConfirmation from '../components/organisms/CheckoutConfirmation';
-import CheckoutDetail from '../components/organisms/CheckoutDetail';
-import CheckoutItem from '../components/organisms/CheckoutItem';
-import Image from 'next/image';
+import Image from 'next/image'
+import CheckoutConfirmation from '../components/organisms/CheckoutConfirmation'
+import CheckoutDetail from '../components/organisms/CheckoutDetail'
+import CheckoutItem from '../components/organisms/CheckoutItem'
 
 export default function checkout() {
   return (
@@ -24,5 +24,29 @@ export default function checkout() {
         <CheckoutConfirmation />
       </div>
     </section>
-  );
+  )
+}
+
+interface getServerSidePropsTypes {
+  req: {
+    cookies: {
+      token: string
+    }
+  }
+}
+
+export async function getServerSideProps({ req }: getServerSidePropsTypes) {
+  const { token } = req.cookies
+  if (!token) {
+    return {
+      redirect: {
+        destination: '/sign-in',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: {},
+  }
 }

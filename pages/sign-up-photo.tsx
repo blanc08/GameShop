@@ -1,17 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 import { useCallback, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import { setSignup } from '../services/auth'
 import { getGameCategory } from '../services/player'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import { useRouter } from 'next/router'
 
 export default function SignUpPhoto() {
   const [categories, setCategories] = useState([])
   const [favorite, setFavorite] = useState('')
-  const [image, setImage] = useState('')
-  const [imagePreview, setImagePreview] = useState(null)
+  const [image, setImage] = useState<File>()
+  const [imagePreview, setImagePreview] = useState('')
   const [localForm, setLocalForm] = useState({
     name: '',
     email: '',
@@ -41,7 +40,7 @@ export default function SignUpPhoto() {
 
     const data = new FormData()
 
-    data.append('image', image)
+    data.append('image', image!)
     data.append('email', form.email)
     data.append('name', form.name)
     data.append('password', form.password)
@@ -148,7 +147,6 @@ export default function SignUpPhoto() {
           </div>
         </form>
       </div>
-      <ToastContainer />
     </section>
   )
 }

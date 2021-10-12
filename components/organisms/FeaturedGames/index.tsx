@@ -1,7 +1,5 @@
-import FeaturedGameCard from '../../molecules/FeaturedGameCard'
-import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
-import axios from 'axios'
+import FeaturedGameCard from '../../molecules/FeaturedGameCard'
 import { getFeaturedGame } from '../../../services/player'
 import { FeaturedGameCardTypes } from '../../../services/data-types'
 
@@ -9,7 +7,8 @@ export default function FeaturedGames() {
   const [gameList, setGameList] = useState([])
 
   const getFeaturedGameList = useCallback(async () => {
-    const data = await getFeaturedGame()
+    const { data } = await getFeaturedGame()
+
     setGameList(data)
   }, [getFeaturedGame])
 
@@ -36,17 +35,15 @@ export default function FeaturedGames() {
           "
           data-aos="fade-up"
         >
-          {gameList.map((item: FeaturedGameCardTypes) => {
-            return (
-              <FeaturedGameCard
-                key={item._id}
-                title={item.name}
-                category={item.category.name}
-                thumbnail={`${API_IMAGE}/${item.thumbnail}`}
-                id={item._id}
-              />
-            )
-          })}
+          {gameList.map((item: FeaturedGameCardTypes) => (
+            <FeaturedGameCard
+              key={item._id}
+              title={item.name}
+              category={item.category.name}
+              thumbnail={`${API_IMAGE}/${item.thumbnail}`}
+              id={item._id}
+            />
+          ))}
         </div>
       </div>
     </section>

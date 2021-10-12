@@ -1,10 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 export interface InputProps {
-  label: string;
+  label: string
+  value?: any
+  disabled?: boolean
+  onChange?: (event: any) => void
 }
 export default function Input(props: InputProps) {
-  const { label, ...nativeProps } = props;
+  const { label, ...nativeProps } = props
   return (
     <>
       <label
@@ -23,5 +26,5 @@ export default function Input(props: InputProps) {
         {...nativeProps}
       />
     </>
-  );
+  )
 }

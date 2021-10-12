@@ -1,3 +1,42 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "import/extensions": 0,
+    "import/no-unresolved": [0, { "commonjs": true }],
+    "react/jsx-filename-extension": [
+      0,
+      { "extensions": [".js", ".jsx", ",tsx", ".ts"] }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "no-underscore-dangle": 0,
+    "semi": 0,
+    "linebreak-style": ["error", "windows"],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectPattern": { "multiline": true }
+      }
+    ],
+    "operator-linebreak": [1, "after"],
+    "implicit-arrow-linebreak": "warn",
+    "react/jsx-curly-newline": 0,
+    "react/jsx-props-no-spreading": 0,
+    "no-shadow": 1,
+    "arrow-body-style": "off"
+  }
 }

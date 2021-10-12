@@ -1,4 +1,3 @@
-import React from 'react'
 import NumberFormat from 'react-number-format'
 
 interface NominalItemProps {
@@ -6,14 +5,18 @@ interface NominalItemProps {
   coinName: string
   coinQuantity: number
   price: number
+  onChange: () => void
 }
 
 export default function NominalItem(props: NominalItemProps) {
-  const { _id, coinName, coinQuantity, price } = props
+  // eslint-disable-next-line object-curly-newline
+  const { _id, coinName, coinQuantity, price, onChange } = props
+
   return (
     <label
       className="col-lg-4 col-sm-6 ps-md-15 pe-md-15 pt-md-15 pb-md-15 pt-10 pb-10"
       htmlFor={_id}
+      onChange={onChange}
     >
       <input
         className="d-none"
@@ -25,7 +28,7 @@ export default function NominalItem(props: NominalItemProps) {
       <div className="detail-card">
         <div className="d-flex justify-content-between">
           <p className="text-3xl color-palette-1 m-0">
-            <span className="fw-medium">{coinQuantity}</span>
+            <span className="fw-medium">{coinQuantity} </span>
             {coinName}
           </p>
           <svg
