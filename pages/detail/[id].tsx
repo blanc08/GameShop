@@ -1,5 +1,4 @@
-import { useRouter } from 'next/router'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import TopUpItem from '../../components/molecules/TopUpItem'
 import Footer from '../../components/organisms/Footer'
 import Navbar from '../../components/organisms/Navbar'
@@ -62,8 +61,6 @@ export async function getStaticPaths() {
     }
   })
 
-  console.log('paths', paths)
-
   return {
     paths,
     fallback: false,
@@ -78,7 +75,6 @@ interface getStaticPropsTypes {
 export async function getStaticProps({ params }: getStaticPropsTypes) {
   const { id } = params
   const data: DetailVoucherTypes = await getDetailVoucher(id)
-  console.log('data : ', data)
 
   return {
     props: {

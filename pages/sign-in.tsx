@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import SignInForm from '../components/organisms/SignInForm';
+import SignInForm from '../components/organisms/SignInForm'
 
 export default function SignIn() {
   return (
@@ -31,5 +30,5 @@ export default function SignIn() {
         </div>
       </div>
     </section>
-  );
+  )
 }

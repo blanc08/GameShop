@@ -1,4 +1,3 @@
-import jwtDecode from 'jwt-decode'
 import Sidebar from '../../../components/organisms/Sidebar'
 import TransactionDetailContent from '../../../components/organisms/TransactionDetailContent'
 import { HistoryTransactionTypes } from '../../../services/data-types'

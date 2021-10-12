@@ -37,14 +37,11 @@ export default function EditProfile() {
     data.append('name', user.name)
     data.append('phoneNumber', user.phoneNumber)
 
-    console.log('data : ', user)
     const response = await updateProfile(data)
 
     if (response.error) {
       toast.error(response.message)
     } else {
-      console.log('data : ', data)
-
       toast.success('Update berhasil!')
       Cookies.remove('token')
       router.push('/sign-in')
